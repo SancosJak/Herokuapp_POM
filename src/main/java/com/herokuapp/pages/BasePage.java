@@ -28,4 +28,8 @@ public abstract class BasePage {
         return new WebDriverWait(driver, Duration.ofSeconds(time))
                 .until(ExpectedConditions.textToBePresentInElement(element, text));
     }
+
+    public boolean checkTextPresent(WebElement element, String text) {
+        return element.getText().contains(text);
+    }
 }
